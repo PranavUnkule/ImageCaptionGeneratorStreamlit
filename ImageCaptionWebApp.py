@@ -42,7 +42,7 @@ def main():
         st.header("Uploaded Image")
         FRAME_WINDOW = st.image([])
         FRAME_WINDOW.image(image_file)
-        while st.button("Generate Caption", key="1"):
+        if st.button("Generate Caption", key="1"):
             tfile = tempfile.NamedTemporaryFile(delete=False)
             tfile.write(image_file.read())
             caption = generate_caption(tfile.name, xception_model, model, tokenizer, max_length)
