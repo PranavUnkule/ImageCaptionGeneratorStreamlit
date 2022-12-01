@@ -46,7 +46,7 @@ def main():
             tfile = tempfile.NamedTemporaryFile(delete=False)
             tfile.write(image_file.read())
             caption = generate_caption(tfile.name, xception_model, model, tokenizer, max_length)
-            st.subheader("Caption -->  {}".format(caption))
+            st.subheader("Caption :   {}".format(caption))
 
 
 if __name__ == "__main__":
