@@ -24,15 +24,15 @@ def main():
     tokenizer = load(open("tokenizer.p", "rb"))
 
     # load models
-    model_dir = 'Models\\model_lstm.json'
-    model_weights_dir = 'Models\\model_lstm_weights.hdf5'
+    model_dir = 'Models/model_lstm.json'
+    model_weights_dir = 'Models/model_lstm_weights.hdf5'
     with open(model_dir, 'r') as json_file:
         json_saved_model = json_file.read()
     model = tf.keras.models.model_from_json(json_saved_model)
     model.load_weights(model_weights_dir)
 
-    model_dir = 'Models\\Xception.json'
-    model_weights_dir = 'Models\\Xception_Weights.hdf5'
+    model_dir = 'Models/Xception.json'
+    model_weights_dir = 'Models/Xception_Weights.hdf5'
     with open(model_dir, 'r') as json_file:
         json_saved_model = json_file.read()
     xception_model = tf.keras.models.model_from_json(json_saved_model)
